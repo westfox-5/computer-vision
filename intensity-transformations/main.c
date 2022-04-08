@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #include <assert.h>
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -8,7 +7,10 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
-//////////////////////////////
+
+// gcc main.c -lm
+
+
 // Greyscale-Image definition
 typedef struct {
 	int w;        // 4
@@ -79,7 +81,6 @@ void img_free(Image *image) {
 	image->w = 0; image->h = 0;
 }
 
-//////////////////////////////
 // Histogram definition
 typedef struct {
 	int values[256];
@@ -103,7 +104,7 @@ void hist_dump(FILE *stream, Histogram const *histogram) {
 int main() {
 	int w, h, channels;
 	//	const char *filename = "original.jpg";
-	const char *filename = "1_small.jpg";
+	const char *filename = "../imgs/1_small.jpg";
 	Image image = img_load_jpg(stdout, filename);
 	// img_dump(stdout, &image);
 

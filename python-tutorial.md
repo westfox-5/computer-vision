@@ -1,11 +1,11 @@
-# Python - NumPy
+# Python 
+
+# Numpy
 
 #### **SPOILER**: Python doesn't like iterative loops
 
-*import numpy as np*
-
 ## ndarray
-mulitdimensional array of homogeneous data (Tensor)
+mulitdimensional array of homogeneous data (**Tensor**)
 * ndim		: num dimensions (axes)
 * shape		: tuple (num elements for each dimension)
 * size		: num elements
@@ -59,4 +59,59 @@ Fancy and Boolean indexing: creates a **copy**
 * np.concatenate:	general stacking
 * np.resize:	creates a copy
 
-----
+## Vectorized expressions
+almost every functions works on elemetwise basis
+
+## Broadcasting
+two arrays are broadcastable if **one of the following** is true:
+1. all arrays have exactly the same shape
+2. arrays have same lnum of dimensions, and the length of each dimension is either common or 1:
+```
+for example
+    3x5x4 
+    3x1x4 
+are broadcastable
+```
+3. the arrays that have too few dimensions can have their shapes *prepended* with a dimension of length 1 (to satisfy prop `2`)
+
+```python
+A = np.array([[1,2,3], [4,5,6], [7,8,9]])
+B = np.array([1,3,7])
+
+'''
+B becomes:
+    1  1  1
+    3  3  3
+    7  7  7
+
+A@B:
+    1  4  15
+    4  10 30
+    7  16 45
+'''
+```
+
+```python
+A = np.array([[1,2,3], [4,5,6], [7,8,9]])
+B = np.array([1,2])
+
+A@B # ERROR: arrays are not compatible
+```
+
+## Linear Algebra with arrays
+
+* `*`: element-wise multiplication
+* `@`: matrix multiplication
+* `A.T`: transpose of a 2D array : change of shape
+* `linalg.solve(A, b)`: solve system of linear scalar equations
+
+# OpenCV
+
+modular by design
+
+* core
+* imgproc
+* calib3d : for camera calibration
+* features2d
+* highgui : for graphical user interface
+

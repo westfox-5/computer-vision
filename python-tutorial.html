@@ -48,7 +48,6 @@
     <body class="vscode-body vscode-light">
         <h1 id="python---numpy">Python - NumPy</h1>
 <h4 id="spoiler-python-doesnt-like-iterative-loops"><strong>SPOILER</strong>: Python doesn't like iterative loops</h4>
-<p><em>import numpy as np</em></p>
 <h2 id="ndarray">ndarray</h2>
 <p>mulitdimensional array of homogeneous data (Tensor)</p>
 <ul>
@@ -106,6 +105,23 @@ corresponding axes must be multiplied to obtain the correct index.</p>
 <li>np.concatenate:	general stacking</li>
 <li>np.resize:	creates a copy</li>
 </ul>
+<h2 id="vectorized-expressions">Vectorized expressions</h2>
+<p>almost every functions works on elemetwise basis</p>
+<p>Use <code>@</code> to perform a matrix multiplication</p>
+<h2 id="broadcasting">Broadcasting</h2>
+<p>two arrays are broadcastable if <strong>one of the following</strong> is true:</p>
+<ol>
+<li>all arrays have exactly the same shape</li>
+<li>arrays have same lnum of dimensions, and the length of each dimension is either common or 1:</li>
+</ol>
+<pre><code><code><div>for example
+    3x5x4 
+    3x1x4 
+are broadcastable
+</div></code></code></pre>
+<ol start="3">
+<li>the arrays that have too few dimensions can have their shapes <em>prepended</em> with a dimension of length 1 (to satisfy prop <code>2</code>)</li>
+</ol>
 <hr>
 
     </body>
